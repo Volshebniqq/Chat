@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+	<input type="text" id="id">
+	<input type="text" id="message">
+	<button onclick="send()">send</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+<script>
+    const user_id = localStorage.getItem('user_id') ? localStorage.getItem('user_id') : '';
+    const socket = io(`http://localhost:3000`, { query:`user_id=${user_id}` });
+    let me = { };
+    socket.on('users', (data) => {
+    	console.log('all users');
+    	console.log(data);
+    });
+
+    socket.on('connected', (data) => {
+    	console.log('user connected');
+    	console.log(data);
+    });
+
+    socket.on('me', (data) => {
+    	console.log('me');
+    	console.log(data);
+    	me = data.user;
+    	localStorage.setItem('user_id', data.user.id);
+    });
+
+    socket.on('disconnected', (data) => {
+    	console.log('user disconnected');
+    	console.log(data);
+    });
+
+    socket.on('message', (data) => {
+    	console.log('new message');
+    	console.log(data);
+    });
+
+    socket.on('getmessages', (data) => {
+    	console.log('messages');
+    	console.log(data);
+    })
+
+    function send() {
+    	const id = document.getElementById('id').value;
+    	const message = document.getElementById('message').value;
+    	alert(me.connection_id);
+    	socket.emit('message', {
+    		from: me.connection_id,
+    		to: id,
+    		message: message
+    	})
+    }
+</script>
+</html>

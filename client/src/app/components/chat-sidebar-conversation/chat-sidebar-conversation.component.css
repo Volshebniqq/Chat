@@ -1,0 +1,41 @@
+.sidebar-conversation {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  cursor: pointer; }
+  .sidebar-conversation .avatar {
+    width: 60px;
+    height: 60px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative; }
+  .sidebar-conversation .avatar:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background-color: #eee;
+    right: -3px;
+    bottom: -3px; }
+  .sidebar-conversation .avatar.online:before {
+    background-color: #20d63e; }
+  .sidebar-conversation .conversation-info {
+    width: 155px; }
+    .sidebar-conversation .conversation-info .name {
+      font-size: 16px;
+      color: #333333; }
+    .sidebar-conversation .conversation-info .last-message {
+      color: #999999;
+      font-size: 14px;
+      line-height: 14px; }
+
+.sidebar-conversation.active {
+  background-color: #f8f8f8; }
+
+/*# sourceMappingURL=chat-sidebar-conversation.component.css.map */

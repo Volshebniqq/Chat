@@ -1,0 +1,24 @@
+<div class="chat-sidebar">
+  <div class="filter-toggles">
+    <div class="toggle online" [class.active]="filter === 'online'"
+          (click)="setFilterOnline()">
+      Online
+    </div>
+    <div class="toggle all" [class.active]="filter === 'all'"
+          (click)="setFilterAll()">
+      All
+    </div>
+  </div>
+  <div class="container-flex">
+    <div class="conversation" *ngFor="let conv of displayedConversations"
+         (click)="setActiveConversation(conv.connection_id)">
+      <app-chat-sidebar-conversation [name]="conv.name"
+                                     [status]="conv.status"
+                                     [avatar]="conv.avatar"
+                                     [active]="conv.active">
+      </app-chat-sidebar-conversation>
+    </div>
+
+  </div>
+  <app-chat-sidebar-search (onInput)="search($event)"></app-chat-sidebar-search>
+</div>

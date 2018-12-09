@@ -1,0 +1,14 @@
+<div class="sidebar-conversation" [class.active]="active">
+  <div class="avatar online"
+       [class.online]="status === 'online'"
+       [style.backgroundImage]="'url('+ avatar +')'"
+  ></div>
+  <div class="conversation-info">
+    <p class="name">
+      {{ name }}
+    </p>
+    <p class="last-message">
+      Fusce dapibus, tellus ac cursus commodo
+    </p>
+  </div>
+</div>

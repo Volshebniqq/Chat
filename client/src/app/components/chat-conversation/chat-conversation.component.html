@@ -1,0 +1,16 @@
+<div class="chat-conversation">
+  <ng-container *ngIf="conversation">
+    <app-chat-conversation-header [avatar]="conversation.avatar"
+                                  [name]="conversation.name">
+    </app-chat-conversation-header>
+    <div class="container-flex">
+      <app-chat-conversation-messages-container [name]="conversation.name"
+                                                [id]="conversation.id">
+
+      </app-chat-conversation-messages-container>
+    </div>
+    <app-chat-conversation-footer [name]="conversation.name"
+                                  [connection_id]="conversation.connection_id">
+    </app-chat-conversation-footer>
+  </ng-container>
+</div>

@@ -1,0 +1,48 @@
+.sidebar-conversation {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  cursor: pointer;
+  .avatar {
+    width: 60px;
+    height: 60px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+  }
+  .avatar:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background-color: #eee;
+    right: -3px;
+    bottom: -3px;
+  }
+  .avatar.online:before {
+    background-color: #20d63e;
+  }
+  .conversation-info {
+    width: 155px;
+    .name {
+      font-size: 16px;
+      color: #333333;
+    }
+    .last-message {
+      color: #999999;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+}
+
+.sidebar-conversation.active {
+  background-color: #f8f8f8;
+}
+

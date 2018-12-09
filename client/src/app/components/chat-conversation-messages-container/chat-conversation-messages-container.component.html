@@ -1,0 +1,10 @@
+<div class="messages-container">
+  <div class="messages">
+    <app-chat-conversation-message *ngFor="let message of displayedMessages"
+                                   [text]="message.message"
+                                   [from]="message.from"
+                                   [name]="name">
+
+    </app-chat-conversation-message>
+  </div>
+</div>

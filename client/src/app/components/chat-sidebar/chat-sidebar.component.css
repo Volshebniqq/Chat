@@ -1,0 +1,28 @@
+.chat-sidebar {
+  width: 262px;
+  background-color: #fff;
+  height: 100%;
+  border: 1px solid #dddddd;
+  display: flex;
+  flex-direction: column; }
+  .chat-sidebar .filter-toggles {
+    display: flex;
+    justify-content: space-between; }
+    .chat-sidebar .filter-toggles .toggle {
+      flex: 1;
+      text-align: center;
+      height: 42px;
+      line-height: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      background-color: #f8f8f8; }
+    .chat-sidebar .filter-toggles .toggle.active {
+      background-color: #fff;
+      border: 1px solid #f8f8f8;
+      border-bottom: 0; }
+  .chat-sidebar .container-flex {
+    flex: 1;
+    overflow-y: scroll; }
+
+/*# sourceMappingURL=chat-sidebar.component.css.map */

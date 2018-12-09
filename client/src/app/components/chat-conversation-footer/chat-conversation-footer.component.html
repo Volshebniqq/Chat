@@ -1,0 +1,15 @@
+<div class="conversation-footer">
+  <div class="typing-container">
+    <p *ngIf="isTyping">{{ name }} is typing...</p>
+  </div>
+  <div class="search-container">
+    <form (submit)="send($event)">
+      <input type="text"
+             name="message"
+             placeholder="Start chatting!"
+             (keyup)="typing()"
+             [(ngModel)]="message">
+      <button>Send message</button>
+    </form>
+  </div>
+</div>

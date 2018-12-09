@@ -1,0 +1,76 @@
+.message-wrapper {
+  width: 100%;
+  text-align: left;
+  overflow: visible;
+  margin-bottom: 20px;
+  padding: 0 10px; }
+  .message-wrapper .message {
+    display: inline-block;
+    text-align: left;
+    width: 636px;
+    border-radius: 7px;
+    background-color: #fff; }
+    .message-wrapper .message .message-header {
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+      height: 36px;
+      line-height: 36px;
+      position: relative;
+      font-size: 14px; }
+      .message-wrapper .message .message-header .sender {
+        position: absolute;
+        left: 16px;
+        height: 36px;
+        line-height: 36px; }
+      .message-wrapper .message .message-header .date {
+        position: absolute;
+        right: 16px;
+        height: 36px;
+        line-height: 36px; }
+    .message-wrapper .message .message-content {
+      font-size: 14px;
+      min-height: 42px;
+      padding: 16px;
+      color: #4a4d52;
+      font-weight: 600;
+      position: relative; }
+
+.message-wrapper.receiver .message .message-header {
+  background-color: #becbd9; }
+  .message-wrapper.receiver .message .message-header .sender {
+    color: #203245; }
+  .message-wrapper.receiver .message .message-header .date {
+    color: #9aa8b7; }
+.message-wrapper.receiver .message .message-content:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9.5px 9px 9.5px 0;
+  border-color: transparent #fff transparent transparent;
+  position: absolute;
+  left: -9px;
+  bottom: 12px; }
+
+.message-wrapper.not-receiver {
+  text-align: right; }
+  .message-wrapper.not-receiver .message .message-header {
+    background-color: #f0cbb3; }
+    .message-wrapper.not-receiver .message .message-header .sender {
+      color: #703a18; }
+    .message-wrapper.not-receiver .message .message-header .date {
+      color: #bba08e; }
+  .message-wrapper.not-receiver .message .message-content:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9.5px 0 9.5px 9px;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    right: -9px;
+    bottom: 12px; }
+
+/*# sourceMappingURL=chat-conversation-message.component.css.map */
